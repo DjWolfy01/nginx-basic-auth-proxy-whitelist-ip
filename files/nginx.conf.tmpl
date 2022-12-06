@@ -11,6 +11,8 @@ events {
 http {
   access_log /dev/stdout;
 
+  ##WHITELIST_ARG##
+
   server {
     listen ##PORT##;
     server_name ##SERVER_NAME##;

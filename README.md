@@ -1,6 +1,6 @@
-# Docker image of Nginx Proxy with Basic Auth
+# Docker image of Nginx Proxy with Basic Auth And Whitelist Ip
 
-[![Docker Repository on Quay](https://quay.io/repository/dtan4/nginx-basic-auth-proxy/status "Docker Repository on Quay")](https://quay.io/repository/dtan4/nginx-basic-auth-proxy)
+[![Docker Repository on docker hub](https://www.unixtutorial.org/images/software/docker-hub.png "Docker Repository on Docker Hub")](https://hub.docker.com/r/vlacour97/nginx-basic-auth-proxy-whitelist-ip)
 
 Simple HTTP Proxy with Basic Authentication
 
@@ -20,10 +20,11 @@ $ docker run \
     -p 8090:8090 \
     -e BASIC_AUTH_USERNAME=username \
     -e BASIC_AUTH_PASSWORD=password \
+    -e WHITELIST_IPS="192.168.0.1,192.168.0.2" \
     -e PROXY_PASS=https://www.google.com \
     -e SERVER_NAME=proxy.dtan4.net \
     -e PORT=80 \
-    quay.io/dtan4/nginx-basic-auth-proxy
+    vlacour97/nginx-basic-auth-proxy-whitelist-ip
 ```
 
 Access to http://localhost:8080 , then browser asks you username and password.
@@ -62,17 +63,19 @@ Reading: 0 Writing: 1 Waiting: 0
 
 ### Optional
 
-|Key|Description|Default|
-|---|---|---|
-|`SERVER_NAME`|Value for `server_name` directive|`example.com`|
-|`PORT`|Value for `listen` directive|`80`|
-|`CLIENT_MAX_BODY_SIZE`|Value for `client_max_body_size` directive|`1m`|
-|`PROXY_READ_TIMEOUT`|Value for `proxy_read_timeout` directive|`60s`|
-|`WORKER_PROCESSES`|Value for `worker_processes` directive|`auto`|
+|Key| Description                                | Default       |
+|---|--------------------------------------------|---------------|
+|`SERVER_NAME`| Value for `server_name` directive          | `example.com` |
+|`PORT`| Value for `listen` directive               | `80`          |
+|`WHITELIST_IPS`| Value for `whitelist` directive            | ` `           |
+|`CLIENT_MAX_BODY_SIZE`| Value for `client_max_body_size` directive | `1m`          |
+|`PROXY_READ_TIMEOUT`| Value for `proxy_read_timeout` directive   | `60s`         |
+|`WORKER_PROCESSES`| Value for `worker_processes` directive     | `auto`        |
 
 ## Author
 
-Daisuke Fujita ([@dtan4](https://github.com/dtan4))
+* Daisuke Fujita (forked) ([@dtan4](https://github.com/dtan4))  
+* Valentin Lacour ([@vlacour97](https://github.com/vlacour97))
 
 ## License
 
