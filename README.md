@@ -1,6 +1,6 @@
 # Docker image of Nginx Proxy with Basic Auth And Whitelist Ip
 
-[![Docker Repository on docker hub](https://www.unixtutorial.org/images/software/docker-hub.png "Docker Repository on Docker Hub")](https://hub.docker.com/r/vlacour97/nginx-basic-auth-proxy-whitelist-ip)
+[![Docker Repository on docker hub](https://www.unixtutorial.org/images/software/docker-hub.png "Docker Repository on Docker Hub")](https://hub.docker.com/r/djwolfy/nginx-basic-auth-proxy-whitelist-ip)
 
 Simple HTTP Proxy with Basic Authentication
 
